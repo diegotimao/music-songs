@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
+import Loading from '../components/Loading';
 
-// import MusicCard from '../components/MusicCard';
+import MusicCard from '../components/MusicCard';
 
 class Album extends React.Component {
   constructor(props) {
@@ -12,10 +13,7 @@ class Album extends React.Component {
     this.searchMusic = this.searchMusic.bind(this);
 
     this.state = {
-      // infoAlbum: '',
-      musics: [],
-      nameArtist: '',
-      // nameAlbum: '',
+      loading: true,
     };
   }
 
@@ -28,29 +26,42 @@ class Album extends React.Component {
     const { id } = match.params;
 
     const result = await getMusics(id);
-    // const infoAlbum = result[0];
-    const musics = result.filter((item) => item.wrapperType === 'track');
-    const nameArtist = musics[0].artistName;
-    // const nameAlbum = musics[0].collectionName;
+
+    const musics = result.filter((item) => item.kind === 'song');
+    const infoAlbum = result;
 
     this.setState(() => ({
       musics,
-      nameArtist,
+      nameArtist: infoAlbum[0].artistName,
+      nameAlbum: infoAlbum[0].collectionName,
+      loading: false,
     }));
   }
 
   render() {
-    const { musics, nameArtist } = this.state;
-    // console.log(nameArtist, nameAlbum);
+    const { musics, nameArtist, nameAlbum, loading } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
-        <p data-testid="artist-name">
-         { nameArtist }
-        </p>
-        { musics.map((item) => (
-          <MusicCard key={ item.wrapperType } item={ item.wrapperType } />
-        ))}
+        { loading ? <Loading /> : (
+          <>
+            <p data-testid="artist-name">
+              { nameArtist }
+            </p>
+            <p data-testid="album-name">
+              { nameAlbum }
+            </p>
+            {
+              musics.map((item) => (
+                <MusicCard
+                  key={ item.trackName }
+                  previewUrl={ item.previewUrl }
+                  name={ item.trackName }
+                />
+              ))
+            }
+          </>
+        )}
       </div>
     );
   }
