@@ -16,6 +16,7 @@ class Album extends React.Component {
       musics: [],
       nameArtist: '',
       nameAlbum: '',
+      loading: false, /* Crie um novo state aqui para loading */
     };
   }
 
@@ -38,11 +39,12 @@ class Album extends React.Component {
       nameArtist,
       nameAlbum,
       infoAlbum,
+      loading: true, /* Coloquei aqui como true */
     }));
   }
 
   render() {
-    const { musics, nameArtist, nameAlbum, infoAlbum } = this.state;
+    const { musics, nameArtist, nameAlbum, loading } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -52,7 +54,9 @@ class Album extends React.Component {
         <p data-testid="album-name">
           { nameAlbum }
         </p>
-        { musics.map((item) => (
+        {/* no primeiro render nao existe nada em music e loading e false entao passa reto, n
+            no segundo render ja existe algo no musics e o loading e true, agora vai funcionar */}
+        {loading && musics.map((item) => (
           <MusicCard key={ item.wrapperType } previewUrl={ item.previewUrl } />
         ))}
       </div>
