@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import Loading from '../components/Loading';
-
 import MusicCard from '../components/MusicCard';
 
 class Album extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.searchMusic = this.searchMusic.bind(this);
 
@@ -29,17 +28,23 @@ class Album extends React.Component {
     const musics = result.filter((item) => item.kind === 'song');
     const infoAlbum = result;
 
-    this.setState(() => ({
+    this.setState({
       musics,
       nameArtist: infoAlbum[0].artistName,
       nameAlbum: infoAlbum[0].collectionName,
       loading: false,
       result,
-    }));
+    });
   }
 
   render() {
-    const { musics, nameArtist, nameAlbum, loading, result } = this.state;
+    const {
+      musics,
+      nameArtist,
+      nameAlbum,
+      loading,
+      result,
+    } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
