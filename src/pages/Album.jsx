@@ -26,7 +26,6 @@ class Album extends React.Component {
     const { id } = match.params;
 
     const result = await getMusics(id);
-
     const musics = result.filter((item) => item.kind === 'song');
     const infoAlbum = result;
 
@@ -35,11 +34,12 @@ class Album extends React.Component {
       nameArtist: infoAlbum[0].artistName,
       nameAlbum: infoAlbum[0].collectionName,
       loading: false,
+      result,
     }));
   }
 
   render() {
-    const { musics, nameArtist, nameAlbum, loading } = this.state;
+    const { musics, nameArtist, nameAlbum, loading, result } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
@@ -57,6 +57,8 @@ class Album extends React.Component {
                   key={ item.trackName }
                   previewUrl={ item.previewUrl }
                   name={ item.trackName }
+                  trackId={ item.trackId }
+                  result={ result }
                 />
               ))
             }
