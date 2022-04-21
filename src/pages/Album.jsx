@@ -27,7 +27,6 @@ class Album extends React.Component {
     const result = await getMusics(id);
     const musics = result.filter((item) => item.kind === 'song');
     const infoAlbum = result;
-
     this.setState({
       musics,
       nameArtist: infoAlbum[0].artistName,
