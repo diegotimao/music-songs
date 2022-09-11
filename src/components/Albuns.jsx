@@ -7,16 +7,17 @@ class Albums extends React.Component {
     const { albums } = this.props;
 
     return (
-      <div className="container">
+      <div className="album-container">
         <div className="albums">
           {albums.map((item) => (
             <div key={ item.collectionId } className="card-album">
               <img className="image" src={ item.artworkUrl100 } alt="" />
-              <p>{ item.collectionName }</p>
+              <h1>{ item.collectionName }</h1>
               <strong>{ item.artistName }</strong>
               <Link
                 data-testid={ `link-to-album-${item.collectionId}` }
                 to={ `/album/${item.collectionId}` }
+                className="btn-album"
               >
                 Ver album
               </Link>

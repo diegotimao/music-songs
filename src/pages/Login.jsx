@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Loading from '../components/Loading';
 import { createUser } from '../services/userAPI';
+import Logo from '../assets/logo.png';
 
 class Login extends React.Component {
   constructor() {
@@ -65,26 +66,44 @@ class Login extends React.Component {
       <div className="login" data-testid="page-login">
         { loading ? <Loading />
           : (
-            <>
-              <h1>Login</h1>
-              <label htmlFor="nameUser">
-                <input
-                  type="text"
-                  name="nameUser"
-                  value={ nameUser }
-                  onChange={ this.handleChange }
-                  data-testid="login-name-input"
-                />
-              </label>
-              <button
-                type="submit"
-                data-testid="login-submit-button"
-                disabled={ isButtonDisable }
-                onClick={ this.handleSubmit }
-              >
-                Entrar
-              </button>
-            </>
+            <div className="login-container">
+              <div className="login-content">
+                <div className="login-info">
+                  <img src={ Logo } alt="Logo icon" />
+                  <h1>Trybetunes</h1>
+                </div>
+                <div className="login-form">
+                  <div className="login-header">
+                    <h1>Login</h1>
+                    <p>
+                      Entre com seu username e divirta-se com seus cantores favoritos
+                    </p>
+                  </div>
+                  <div className="formulario-login">
+
+                    <input
+                      placeholder="Digite seu username"
+                      className="input-login"
+                      type="text"
+                      name="nameUser"
+                      value={ nameUser }
+                      onChange={ this.handleChange }
+                      data-testid="login-name-input"
+                    />
+
+                    <button
+                      className="btn"
+                      type="submit"
+                      data-testid="login-submit-button"
+                      disabled={ isButtonDisable }
+                      onClick={ this.handleSubmit }
+                    >
+                      Entrar
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           )}
       </div>
     );

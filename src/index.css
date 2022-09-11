@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&family=Nunito:wght@400;500;700;800&family=Poppins:wght@400;500;700;800&family=Roboto:wght@100;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #f0f0f7;
 }
 
 code {
@@ -22,14 +29,462 @@ code {
   width: 100%;
 }
 
+/* album */
 .albums {
   display: flex;
   max-width: 1200px;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 40px auto;
+  gap: 66px;
 }
 
 .card-album {
-  width: 300px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
 
+.card-album img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card-album h1 {
+  font-size: 16px;
+  max-width: 160px;
+  text-align: center;
+}
+
+.card-album strong {
+  color: rgb(160, 158, 158);
+  font-weight: 400;
+}
+
+.btn-album {
+  padding: 10px;
+  background: #4865ff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* 
+Album musica
+*/
+
+.music-container {
+  width: 100%;
+  margin-top: 45px;
+}
+
+.music-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card-music {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.music-content h1 {
+  font-size: 29px;
+}
+
+.music-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(255, 255, 255);
+  padding: 4px 20px;
+  border-radius: 6px;
+  border: 1px solid #e6e7ee;
+}
+
+.name-artista {
+  width: 30%;
+}
+
+.audio-music {
+  display: flex;
+  flex-basis: 2;
+}
+
+.favorite-soung {
+  display: flex;
+  flex-basis: 1;
+}
+
+.favorite-label {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  font-weight: 300;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.favorite-label input {
+  cursor: pointer;
+}
+
+.banner {
+  width: 100%;
+  height: 180px;
+  background-image: url('https://source.unsplash.com/random/900×700/?music');
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  margin-bottom: 80px;
+  border-radius: 8px;
+}
+
+.banner img {
+  padding: 80px 40px;
+  border-radius: 50%;
+  width: 260px;
+}
+/* 
+Header 
+*/
+
+.header {
+  width: 100%;
+  height: 70px;
+  background: white;
+  padding-top: 15px;
+  border-bottom: 1px solid rgb(216, 213, 213);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  gap: 65px;
+}
+
+.link-item {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user img {
+  width: 38px;
+  border-radius: 50%;
+  border: 2px solid #3f3d56;
+}
+
+/* 
+Search
+*/
+
+.search {
+  width: 100%;
+}
+
+.form {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.form-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-content {
+  display: flex;
+  gap: 10px;
+}
+
+.search-content input {
+  height: 40px;
+  width: 350px;
+  border-radius: 4px;
+  border: 1px solid rgb(211, 208, 208);
+  outline: none;
+  padding-left: 14px;
+}
+
+.search-content button {
+  height: 40px;
+  width: 100px;
+  border-radius: 4px;
+  border: none;
+  background: #4865ff;
+  color: white;
+  cursor: pointer;
+}
+
+.search-result {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.seach-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10%;
+}
+
+.seach-info img {
+  width: 400px;
+}
+.seach-info h1 {
+  font-size: 19px;
+  color: rgb(172, 164, 164);
+}
+
+/* 
+Album container 
+*/
+
+.card .item {
+  margin-top: 10px;
+}
+
+/* 
+Login
+*/
+
+.login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f0f7;
+}
+
+.login-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: centers;
+}
+
+.login-content {
+  width: 650px;
+  height: 400px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 40px 50px;
+  border-radius: 8px;
+}
+
+.login-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.login-info img {
+  width: 50px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario-login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formulario-login input {
+  width: 100%;
+  height: 42px;
+  padding-left: 15px;
+  border: 1px solid rgb(199, 198, 198);
+  border-radius: 4px;
+  color: black;
+  outline: none;
+}
+
+.formulario-login button {
+  width: 100%;
+  height: 45px;
+  border: none;
+  background: #7561f7;
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* 
+Profile
+*/
+
+.profile {
+  width: 100%;
+}
+
+.profile-container {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+.profile-banner {
+  width: 100%;
+  height: 210px;
+  background-image: url('https://media-exp1.licdn.com/dms/image/C4D16AQHJacxv_ZF76A/profile-displaybackgroundimage-shrink_200_800/0/1642872779366?e=2147483647&v=beta&t=cxZ-vd_Ndyh38exOSWojouLSxTqkdYCWHDFEKP4BnUQ');
+  background-position: center;
+  background-repeat: none;
+  background-size: cover;
+  border-radius: 8px;
+}
+
+.profile-info {
+  padding-left: 40px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 40px;
+}
+
+.profile-info img {
+  margin-top: -70px;
+  border-radius: 5%;
+  width: 170px;
+}
+
+.profile-info-user {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description {
+  text-align: justify;
+  padding: 25px 15px;
+  background: rgb(245, 243, 243);
+  border-radius: 6px;
+  line-height: 25px;
+}
+
+.redirect {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 500;
+  width: 150px;
+  height: 43px;
+  background: #7561f7;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 
+Profile edite
+*/
+
+.formulario-edit {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 40px auto;
+}
+
+.formulario-edit h1 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.formulario-edit label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.formulario-edit input {
+  width: 80%;
+  height: 38px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  outline: none;
+  padding-left: 15px;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 90px;
+  background: rgba(135, 226, 230, 0.726);
+  margin-top: 35px;
+  padding: 0 30px;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.submit-button button {
+  width: 140px;
+  height: 42px;
+  border: none;
+  background: rgb(36, 223, 135);
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.favorites-container {
+  width: 100%;
+}
+
+.favorites-content {
+  max-width: 1200px;
+  margin: 40px auto;
 }

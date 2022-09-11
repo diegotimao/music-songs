@@ -110,57 +110,65 @@ class ProfileEdit extends React.Component {
     return (
       <div data-testid="page-profile-edit">
         <Header />
-        { loading ? <strong>Carregando...</strong> : (
-          <form action="">
-            <label htmlFor="name">
-              Username
-              <input
-                type="text"
-                name="name"
-                value={ name }
-                data-testid="edit-input-name"
-                onChange={ this.handleChange }
-              />
-            </label>
-            <label htmlFor="email">
-              Email
-              <input
-                type="email"
-                name="email"
-                value={ email }
-                data-testid="edit-input-email"
-                onChange={ this.handleChange }
-              />
-            </label>
-            <label htmlFor="description">
-              Description
-              <input
-                type="textarea"
-                name="description"
-                value={ description }
-                data-testid="edit-input-description"
-                onChange={ this.handleChange }
-              />
-            </label>
-            <label htmlFor="image">
-              Url da imagem
-              <input
-                type="text"
-                name="image"
-                value={ image }
-                data-testid="edit-input-image"
-                onChange={ this.handleChange }
-              />
-            </label>
-            <button
-              type="submit"
-              data-testid="edit-button-save"
-              disabled={ isValidButton }
-              onClick={ this.handleClick }
-            >
-              Editar perfil
-            </button>
-          </form>
+        { loading ? null : (
+          <div className="profile">
+            <div className="profile-container">
+              <form action="" className="formulario-edit">
+                <h1>Editar perfil</h1>
+                <label htmlFor="name">
+                  Username
+                  <input
+                    type="text"
+                    name="name"
+                    value={ name }
+                    data-testid="edit-input-name"
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label htmlFor="email">
+                  Email
+                  <input
+                    type="email"
+                    name="email"
+                    value={ email }
+                    data-testid="edit-input-email"
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label htmlFor="description">
+                  Description
+                  <input
+                    type="textarea"
+                    name="description"
+                    value={ description }
+                    data-testid="edit-input-description"
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <label htmlFor="image">
+                  Url da imagem
+                  <input
+                    type="text"
+                    name="image"
+                    value={ image }
+                    data-testid="edit-input-image"
+                    onChange={ this.handleChange }
+                  />
+                </label>
+                <div className="submit-button">
+                  <p>Preencha os dados com atenção</p>
+                  <button
+                    type="submit"
+                    data-testid="edit-button-save"
+                    disabled={ isValidButton }
+                    onClick={ this.handleClick }
+                  >
+                    Editar perfil
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         ) }
       </div>
     );

@@ -61,30 +61,37 @@ class MusicCard extends React.Component {
     const { previewUrl, name, trackId } = this.props;
     const { loading, isChecked } = this.state;
     return (
-      <div data-testid="page-favorites">
-        <p>{ name }</p>
-        <audio data-testid="audio-component" src={ previewUrl } controls>
-          <track kind="captions" />
-          O seu navegador não suporta o elemento
-          <code>audio</code>
-          .
-        </audio>
-        { loading ? (
-          <strong>Carregando...</strong>
-        ) : (
-          <label
-            htmlFor="checkbox"
-          >
-            Favorita
-            <input
-              type="checkbox"
-              name="checkbox"
-              checked={ isChecked }
-              onChange={ this.addFavorites }
-              data-testid={ `checkbox-music-${trackId}` }
-            />
-          </label>
-        )}
+      <div data-testid="page-favorites" className="music-card">
+        <div className="name-artista">
+          <p>{ name }</p>
+        </div>
+        <div className="audio-music">
+          <audio data-testid="audio-component" src={ previewUrl } controls>
+            <track kind="captions" />
+            O seu navegador não suporta o elemento
+            <code>audio</code>
+            .
+          </audio>
+        </div>
+        <div className="favorite-soung">
+          { loading ? (
+            <strong>Carregando...</strong>
+          ) : (
+            <label
+              className="favorite-label"
+              htmlFor="checkbox"
+            >
+              Favorita
+              <input
+                type="checkbox"
+                name="checkbox"
+                checked={ isChecked }
+                onChange={ this.addFavorites }
+                data-testid={ `checkbox-music-${trackId}` }
+              />
+            </label>
+          )}
+        </div>
       </div>
     );
   }

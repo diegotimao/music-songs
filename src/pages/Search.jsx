@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Loading from '../components/Loading';
 
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+import Banner from '../assets/banner.png';
 
 class Search extends React.Component {
   constructor() {
@@ -84,37 +85,58 @@ class Search extends React.Component {
     return (
       <div className="search" data-testid="page-search">
         <Header />
-        <label htmlFor="search">
-          <input
-            type="text"
-            name="search"
-            value={ search }
-            data-testid="search-artist-input"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          data-testid="search-artist-button"
-          type="submit"
-          disabled={ isButtonDisable }
-          onClick={ this.handleClick }
-        >
-          Pesquisar
-        </button>
-        { loading && (
-          <Loading />
-        )}
+        <div className="form">
+          <div className="form-content">
+            <div className="response">
+              { !loading && resultArtist && !albumErro && (
+                <strong>
+                  Resultado de álbuns de:
+                  {' '}
+                  { valueSearch }
+                </strong>
+              )}
+              { albumErro ? <p>Nenhum álbum foi encontrado</p> : null }
+            </div>
+            <div className="search-loading">
+              { loading && (
+                <Loading />
+              )}
+            </div>
+            <div className="search-content">
+              <input
+                type="text"
+                name="search"
+                value={ search }
+                placeholder="Pesquise por um artista ou banda"
+                data-testid="search-artist-input"
+                onChange={ this.handleChange }
+              />
+              <button
+                data-testid="search-artist-button"
+                type="submit"
+                disabled={ isButtonDisable }
+                onClick={ this.handleClick }
+              >
+                Pesquisar
+              </button>
+            </div>
+          </div>
+          {!albums && (
+            <div className="search-result">
+              <div className="seach-info">
+                <img src={ Banner } alt="Banner" />
+                <h1>Pesquise seus atistas favoritos e esculte a vontade.</h1>
+              </div>
+            </div>
+          )}
+        </div>
         { !loading && resultArtist && (
-          <>
-            <strong>
-              Resultado de álbuns de:
-              {' '}
-              { valueSearch }
-            </strong>
-            <Albums albums={ albums } />
-          </>
+          <div className="content-response">
+            <div className="response-album">
+              <Albums albums={ albums } />
+            </div>
+          </div>
         )}
-        { albumErro ? <p>Nenhum álbum foi encontrado</p> : null }
       </div>
     );
   }

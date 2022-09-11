@@ -47,18 +47,29 @@ class Profile extends React.Component {
     return (
       <div data-testid="page-profile">
         <Header />
-        { loading ? <strong>Carregando...</strong> : (
-          <>
-            <h1>{name}</h1>
-            <img
-              src={ image }
-              alt="Avatar"
-              data-testid="profile-image"
-            />
-            <p>{ email }</p>
-            <p>{ description }</p>
-            <Link to="/profile/edit">Editar perfil</Link>
-          </>
+        { loading ? null : (
+          <div className="profile">
+            <div className="profile-container">
+              <div className="profile-banner">
+                <img src="" alt="" />
+              </div>
+              <div className="profile-info">
+                <img
+                  src={ image }
+                  alt="Avatar"
+                  data-testid="profile-image"
+                />
+                <div className="profile-info-user">
+                  <h1>{name}</h1>
+                  <p>{ email }</p>
+                  <p className="description">{ description }</p>
+                </div>
+                <div className="redirect">
+                  <Link className="link" to="/profile/edit">Editar perfil</Link>
+                </div>
+              </div>
+            </div>
+          </div>
         ) }
       </div>
     );
