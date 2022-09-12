@@ -1,9 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 
 import Loading from './Loading';
-import Logo from '../assets/logo.png';
+
+import Menu from './Menu';
 
 class Header extends React.Component {
   constructor() {
@@ -42,40 +42,7 @@ class Header extends React.Component {
       <header data-testid="header-component" className="header">
         <div className="header-content">
           { loading ? <Loading />
-            : (
-              <>
-                <div className="logo">
-                  <img src={ Logo } alt="Logo icon" />
-                </div>
-                <div className="links">
-                  <Link
-                    to="/search"
-                    data-testid="link-to-search"
-                    className="link-item"
-                  >
-                    Pesquisar
-                  </Link>
-                  <Link
-                    to="/favorites"
-                    data-testid="link-to-favorites"
-                    className="link-item"
-                  >
-                    Favoritas
-                  </Link>
-                  <Link
-                    to="/profile"
-                    data-testid="link-to-profile"
-                    className="link-item"
-                  >
-                    Perfil
-                  </Link>
-                </div>
-                <div className="user">
-                  <p data-testid="header-user-name">{ nameUser }</p>
-                  { userImage && <img src={ userImage } alt="User avatar" /> }
-                </div>
-              </>
-            )}
+            : (<Menu nameUser={ nameUser } userImage={ userImage } />)}
         </div>
       </header>
     );

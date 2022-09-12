@@ -38,7 +38,7 @@ class Login extends React.Component {
       loading: true,
     });
 
-    await createUser({ name: nameUser });
+    await createUser({ name: nameUser, image: 'http://cdn.onlinewebfonts.com/svg/img_569204.png' });
 
     this.setState({
       loading: false,

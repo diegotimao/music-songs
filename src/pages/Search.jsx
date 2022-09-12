@@ -125,7 +125,6 @@ class Search extends React.Component {
             <div className="search-result">
               <div className="seach-info">
                 <img src={ Banner } alt="Banner" />
-                <h1>Pesquise seus atistas favoritos e esculte a vontade.</h1>
               </div>
             </div>
           )}

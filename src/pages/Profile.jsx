@@ -50,7 +50,7 @@ class Profile extends React.Component {
         { loading ? null : (
           <div className="profile">
             <div className="profile-container">
-              <div className="profile-banner">
+              <div className="banner">
                 <img src="" alt="" />
               </div>
               <div className="profile-info">
