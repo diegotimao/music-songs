@@ -1,16 +1,38 @@
-# 🚧 README em construção 🚧
+# Musicfy
 
-<!-- Olá, Tryber!
+A Musicfy é uma plataforma interativa e intuitiva que permite aos amantes da música explorar seus álbuns e artistas favoritos de maneira rápida e fácil. Com uma interface moderna e elegante, a aplicação proporciona uma experiência imersiva para os apaixonados por música.
 
-Esse é apenas um arquivo inicial para o README do seu projeto.
 
-É essencial que você preencha esse documento por conta própria, ok?
+> **Preview:**
+> 👉 [Acessar o Musicfy](https://music-songs.vercel.app/)
 
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
+## Habilidades: 
 
-⚠️ IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
+- **Autenticação Api** via token
+- **Javascript** 
+- **Redux** para gerenciamento global da aplicação.
+- **React Hook** (useState, useEffect).
+- **React Hooks Customizados**.
+- **React testing library** para garantir a qualidade do código e testar possíveis interações do usuário.
+- **Trabalho em equipe**.
+- **Scrum Master** para gerenciamento de projetos.
+- **Trello** para divisão de tarefas e atualizações do desenvolvimento.
 
--->
+## Apis:
+
+#### Open Trivia Database
+
+A [Trivia API](https://opentdb.com/api_config.php) Database fornece uma API JSON totalmente gratuita para uso em projetos de programação. É preciso gerar um token de autenticação para ter acesso a perguntas triviais.
+
+
+## Bibliotecas que contém neste projeto:
+* **[ReactJS](https://pt-br.reactjs.org/)**
+* **[Redux](https://redux.js.org/)**
+* **[React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)**
+
+## Layout:
+
+![](./src/asserts/users.png)
+![](./src/asserts/search.png)
+![](./src/asserts/albums.png)
+![](./src/asserts/player.png)
