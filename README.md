@@ -32,7 +32,7 @@ A [Trivia API](https://opentdb.com/api_config.php) Database fornece uma API JSON
 
 ## Layout:
 
-![](./src/asserts/users.png)
-![](./src/asserts/search.png)
-![](./src/asserts/albums.png)
-![](./src/asserts/player.png)
+![](./src/assets/users.png)
+![](./src/assets/search.png)
+![](./src/assets/albums.png)
+![](./src/assets/player.png)
